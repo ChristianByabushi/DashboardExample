@@ -19,8 +19,19 @@
     --card-padding:1.8rem;
     --padding-1: 1.2rem;
     --box-shadow:0 2rem 3rem var(--color-light);
-  
+    --color-alltitles : var(--color-dark)
 } 
+
+/* Dark theme variables */ 
+.dark-theme-variables {
+    --color-alltitles : rgb(38, 37, 112);
+    --color-background : #181a1e;
+    --color-white:#202528; 
+    --color-dark:#edeffd;
+    --color-dark-variant : #a3bdcc; 
+    --color-light : rgba(0,0,0,0.4);
+    --box-shadow : 0 2rem 3rem var(--color-light);
+}
 
 /* default behavior of my page */
 
@@ -68,19 +79,25 @@ img{
 h1{
     font-weight: 800; 
     font-size: 1.8rem; 
-    
+
 }
 h2{ 
-font-size: 1.4rem; 
+font-size: 1.4rem;  
+background-color: alltitles;
 } 
 h3{
-    font-size: 0.87rem;
+    font-size: 0.87rem; 
+   
+
 } 
 h4{
     font-size: 0.8rem;
 }
 h5{
     font-size:0.77rem;
+}
+h1,h2,h3,h4,h5{
+    color: var(--color-alltitles);
 } 
 small{
     font-size: 0.75rem;
@@ -566,12 +583,16 @@ background-color: var(--color-success);
        width: 94%;  
        grid-template-columns: 8rem auto 23rem ;
    }
+aside{
+    margin-left: 0;
+    width: 10rem; 
+}
 
 aside .top .titleApp{ 
-    display:none;
+    display:inline;
 } 
 aside .sidebar h3{
-    display: none;
+    clear: both;
 }
 aside .sidebar a{
     width: 5.6rem;
@@ -580,12 +601,15 @@ aside .sidebar a:last-child{
   position:relative; 
   margin-top:1.8rem
 } 
+main{
+    margin-left: 2.5rem;
 
+}
 main .insights {
     display: grid; 
     grid-template-columns: 1fr;
     gap: 2;
-    margin-top: 2rem;
+    margin-top: 2rem; 
 } 
 main .insights > div{ 
  background-color: var(--color-white); 
@@ -630,18 +654,119 @@ main table tbody tr td:first-child,
 main table tbody tr td:last-child{
     display: none; 
     /* we remove colon all like in excel, we begin by the first child of th */
-   
+} 
+
+}
+@media screen and (max-width: 768px){
+    .container{
+    width: 100%;  
+    grid-template-columns: 1fr;
+} 
+aside{
+     position: fixed;
+     left: -100%;
+     background-color: var(--color-white);
+     width: 15rem;
+     z-index: 3;
+     box-shadow: 1rem 3rem 4rem var(--color-light);
+     height: 100vh;
+     padding-right: var(--card-padding);
+     display: none;
+     animation: showMenu 800ms ease forwards;
+     -webkit-animation: showMenu 800ms ease forwards;
+}
+@keyframes showMenu { 
+    to{
+         left:0;
+    }
+       
+}
+aside .logo{
+    margin-left: 1rem;
+} 
+aside .logo .titleApp{
+display: inline;
+} 
+
+aside .sidebar h3{
+    display: inline;
+}
+ 
+aside .sidebar a{
+width: 100%;
+height: 3.4rem;
+} 
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    } 
+ aside .close{ 
+    margin-left: 2rem;
+    display:inline-block; 
+    cursor:pointer; 
+    font-size: 2rem; 
+    }
+main  {
+    margin-top: 8rem;
+    padding: 0 1rem;
+} 
+
+main .recent-order{
+    position: relative;  
+    margin: 3rem 0 0 0;
+    width: 100% ; 
+}
+main .recent-order table{
+    width: 100%;
+    margin: 0;
+} 
+.right{
+     width: 94%;  
+     margin: 0 auto 4rem;
+}
+.right .top{
+      position: fixed;
+      top: 0;
+      left: 0; 
+      align-items: center;
+      padding: 0 0.8rem;  
+      height: 4.6rem; 
+      background: var(--color-white); 
+      width: 100%; 
+      margin: 0;
+      z-index: 2;
+      box-shadow: 0 1rem 1rem var(--color-light);
+             
+} 
+
+.right .top .theme-toggler {
+    width: 4.4rem; 
+    position: absolute;
+    left: 66%;
+} 
+.right .profile .info{
+    display: none;
+} 
+
+.right .top button { 
+    position: absolute;
+    font-size: 2rem;  
+    left: 0.5rem; 
+    display: inline-block; 
+    background-color: transparent;
+    color: var(--color-dark); 
+    cursor: pointer;
+} 
+.right .top button span{
+    font-size: 2.5rem;
 } 
 
 
 
-}
+    
 
-@media screen and (max-width: 768px){
 
-    body{
-        background-color: red;
-    }
+
 }
  
 
