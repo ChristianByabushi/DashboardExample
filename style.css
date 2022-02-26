@@ -1,0 +1,794 @@
+:root{
+    --color-primary:#7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-white: #fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark: #363949;
+    --color-light:rgba(132,139,200,0.18);
+    --color-primary-variant: #111e88; 
+    --color-dark-variant: #677483; 
+    --color-background: #eaeaee;
+  
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --card-padding:1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow:0 2rem 3rem var(--color-light);
+  
+} 
+
+/* default behavior of my page */
+
+*{
+ margin: 0;
+ padding: 0; outline: 0; appearance: none; border: 0; 
+ text-decoration: none;list-style: none;  
+ box-sizing: border-box; 
+} 
+html{
+    font-size: 14px; 
+} 
+body{
+    width: 100vw;
+    height: 100vh; 
+    font-family: 'Times New Roman', Times, serif;
+    background-color: var(--color-background);
+    font-size: 0.88rem; 
+    user-select: none;
+    overflow:none;
+} 
+
+
+/* we have three part for a section represented by aside, 
+were going to display it like a grid*/
+.container{
+    display: grid;
+    width: 96%; 
+    margin: 0 auto; 
+    gap : 1.8rem; 
+    grid-template-columns: 14rem auto 23rem;
+
+/* 14rem its for aside section, auto for the main, and 23rem for the right */
+
+}
+
+a{
+    color: var(--color-dark);
+} 
+img{
+    display: block;    /* throug one line it self */
+    width: 100%; 
+    /* occupates itself the the whole width */
+}
+h1{
+    font-weight: 800; 
+    font-size: 1.8rem; 
+    
+}
+h2{ 
+font-size: 1.4rem; 
+} 
+h3{
+    font-size: 0.87rem;
+} 
+h4{
+    font-size: 0.8rem;
+}
+h5{
+    font-size:0.77rem;
+} 
+small{
+    font-size: 0.75rem;
+} 
+.profile-photo{
+    width: 2.8rem;
+    height: 2.8rem ;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%; 
+    overflow: hidden;
+}
+.text-muted{
+    color: var(--color-info-dark);
+} 
+p{
+    color: var(--color-dark-variant)
+} 
+b{
+    color: var(--color-dark);
+}
+.primary{
+color: var(--color-primary);
+}
+
+.success{
+    color: var(--color-success);
+    }
+.danger{
+    color: var(--color-danger);
+     }
+.warning{
+    color: var(--color-warning);
+} 
+aside{
+height: 100vh; 
+/* 100 veritical height */
+}
+aside .top{
+    background-color: white;
+    display: flex; 
+    align-items: center;  
+    justify-content: space-between; 
+    margin-top: 1.4rem;
+           
+} 
+aside .logo{    
+    display: flex; 
+    align-items: center;
+    gap: 0.8rem; 
+
+}
+aside .logo img{
+width: 2.5rem;
+height: 2.5rem;  
+} 
+aside .close{
+    display:none;
+}
+
+aside .sidebar{
+    background:white; 
+    display: flex; 
+    flex-direction: column;
+    height: 86vh; 
+    position: relative; 
+    top:3rem;
+}
+aside h3{
+ font-weight: 500;  
+} 
+aside .sidebar a{
+    display: flex;
+    color: var(--color-info-dark);
+    margin-left: 2rem;
+    gap:1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease ;
+    -webkit-transition: all 300ms ease ;
+    -moz-transition: all 300ms ease ;
+    -ms-transition: all 300ms ease ;
+    -o-transition: all 300ms ease ;
+} 
+
+aside .sidebar a span{
+    font-size: 2rem;
+    transition: all 300ms ease; 
+    /* its done when we make event diffent */
+     
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+} 
+aside .sidebar a:last-child {
+position: absolute;
+bottom: 0.6rem;  
+width: 100%;
+}  
+aside .sidebar a.active{
+    background: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+} 
+aside .sidebar a.active::before{
+    content: "";
+    width: 6px;
+    height: 100%;
+    background: var(--color-primary);
+} 
+
+aside .sidebar a.active span{
+    color: var(--color-primary); 
+    margin-left: calc(1rem - 3px); 
+} 
+
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+margin-left:1rem;
+} 
+
+/* when a class is formed by two proprieties 
+its adviced to join it, but the moment when its parent for another, we must separate it with a space */
+
+aside .sidebar .message-count{
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size:11px;
+    border-radius: var(--border-radius-1);
+    -webkit-border-radius: var(--border-radius-1);
+    -moz-border-radius: var(--border-radius-1);
+    -ms-border-radius: var(--border-radius-1);
+    -o-border-radius: var(--border-radius-1);
+} 
+main{
+    margin-top: 1.4rem;
+}
+main .date{
+      display: inline-block; 
+      margin-top: 2rem; 
+      padding: 0.5rem 1.6rem;
+      background-color: var(--color-light);
+      border-radius:var(--border-radius-1);
+      -webkit-border-radius:var(--border-radius-1);
+      -moz-border-radius:var(--border-radius-1);
+      -ms-border-radius:var(--border-radius-1);
+      -o-border-radius:var(--border-radius-1);
+} 
+main .date input[type='date']{  
+background: transparent;
+color: var(--color-dark); 
+} 
+
+main .insights {
+    display: grid; 
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.6rem;
+} 
+
+main .insights > div{ 
+ background-color: var(--color-white); 
+ width: 14rem;
+ padding: var(--card-padding);
+ border-radius: var(--card-border-radius) ;
+ -webkit-border-radius: var(--card-border-radius) ;
+ -moz-border-radius: var(--card-border-radius) ;
+ -ms-border-radius: var(--card-border-radius) ;
+ -o-border-radius: var(--card-border-radius) ;
+ margin-top:1rem;
+ box-shadow: var(--box-shadow);
+ transition: all 300ms ease ;
+ -webkit-transition: all 300ms ease ;
+ -moz-transition: all 300ms ease ;
+ -ms-transition: all 300ms ease ;
+ -o-transition: all 300ms ease ;
+} 
+
+main .insights > div:hover {
+    box-shadow: none; 
+} 
+
+main .insights > div span{
+ background: var(--color-primary);
+ color: var(--color-white); 
+ font-size: 2rem;
+ border-radius: 50% ;
+ -webkit-border-radius: 50% ;
+ -moz-border-radius: 50% ;
+ -ms-border-radius: 50% ;
+ -o-border-radius: 50% ;
+} 
+
+main .insights > div.expenses span {
+    background-color: var(--color-success);
+}
+main .insights > div.income span {
+    background-color: var(--color-danger);
+}  
+
+main .insights > div.income span{
+background-color: var(--color-info-dark)
+
+} 
+main .insights > div .middle{
+    display: flex; 
+    align-items: center; 
+    /* we align items as long as it exist for the element */
+    justify-content: space-between;
+}
+
+main .insights h3{
+     margin: 1rem 0 0.6rem;
+     font-size: 1rem;
+} 
+
+main .insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%; 
+} 
+
+main .insights svg{
+    width: 6.4rem; 
+    height: 6.4rem;  
+} 
+main .insights svg circle{ 
+/* for all the svg such as sales, expensis, and so on */
+    fill:none; 
+    /* i withdraw the font */
+    
+    
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap:round;
+    transform: translate(5px,5px) ;
+    -webkit-transform: translate(5px,5px) ;
+    -moz-transform: translate(5px,5px) ;
+    -ms-transform: translate(5px,5px) ;
+    -o-transform: translate(5px,5px) ; 
+    stroke-dasharray: 110 ; 
+    /* dasharray speficies the patern of dashes and gaps 
+    uses to stroke(paints along the outline of the graphical
+    element */  
+    stroke-dashoffset: 92 ;  
+    /* dashoffset specifies the distance
+        into the dash the start of
+    the dash  */
+} 
+main .insights .sales svg circle{
+    stroke-dashoffset: -30; 
+    stroke-dasharray: 290;
+}
+main .insights .expenses svg circle{
+    stroke-dashoffset: -30; 
+    stroke-dasharray: 290;
+}
+main .insights .income svg circle{
+    stroke-dashoffset: 32 ; 
+    stroke-dasharray: 90;
+} 
+main .insights .progress .number{ 
+position: absolute;
+top:0;
+left: 0;  
+height: 100%; 
+width: 100%; 
+display: flex; 
+justify-content: center; 
+align-items: center; 
+} 
+
+main .insights small{
+    margin-top: 1.6rem; 
+    display: block;
+     
+     /* most of the time the margin works with
+     the manner of displaying elements like here */
+         
+}
+
+main .recent-order{
+    margin-top: 2rem;
+} 
+
+main .recent-order table{
+    background-color: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius) ;
+    -webkit-border-radius: var(--card-border-radius) ;
+    -moz-border-radius: var(--card-border-radius) ;
+    -ms-border-radius: var(--card-border-radius) ;
+    -o-border-radius: var(--card-border-radius) ;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease  ;
+    -webkit-transition: all 300ms ease  ;
+    -moz-transition: all 300ms ease  ;
+    -ms-transition: all 300ms ease  ;
+    -o-transition: all 300ms ease  ; 
+} 
+main .recent-order h2{
+    margin-bottom: 0.8rem;
+}
+main .recent-order table:hover{
+    box-shadow: none;
+} 
+main table tbody td{ 
+height: 2.8rem; 
+border-bottom: 1px solid var(--color-light);    
+}
+main table thead th{  
+    font-size: 1rem;
+    height: 2.8rem; 
+    border-bottom: 5px solid var(--color-light);    
+    } 
+main table tbody tr:last-child td{
+    border: none; 
+}
+
+main .recent-order a{
+    text-align: center; 
+    display: block;
+    margin: 1rem auto; 
+    color: var(--color-primary);
+    /* the value concerns the margin-top */      
+} 
+.right{
+    margin-top:1.4rem
+}
+.right .top{
+    display: flex;
+    justify-content: end;
+    gap:2rem; 
+} 
+.right .top button{
+    display: none;
+} 
+.right .theme-toggler { 
+    background: var(--color-light);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap:0.5rem;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+    -webkit-border-radius: var(--border-radius-1);
+    -moz-border-radius: var(--border-radius-1);
+    -ms-border-radius: var(--border-radius-1);
+    -o-border-radius: var(--border-radius-1);
+} 
+.right .theme-toggler span{
+font-size: 1.2rem; 
+width: 50%;
+height: 100%;   
+display: flex; 
+align-items: center; 
+justify-content: center;
+} 
+.right .theme-toggler span.active{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+    -webkit-border-radius: var(--border-radius-1);
+    -moz-border-radius: var(--border-radius-1);
+    -ms-border-radius: var(--border-radius-1);
+    -o-border-radius: var(--border-radius-1);
+} 
+.right .top .profile{
+    display: flex; 
+    gap : 2rem;
+    text-align: right;
+}
+.right .recent-updates h2{
+    margin-bottom: 0.8rem; 
+}
+.right .recent-updates .updates{
+    background-color: var(--color-white);
+    padding: var(--card-padding); 
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    -webkit-border-radius: var(--card-border-radius);
+    -moz-border-radius: var(--card-border-radius);
+    -ms-border-radius: var(--card-border-radius);
+    -o-border-radius: var(--card-border-radius);
+    transition:all 300ms ease ;
+    -webkit-transition:all 300ms ease ;
+    -moz-transition:all 300ms ease ;
+    -ms-transition:all 300ms ease ;
+    -o-transition:all 300ms ease ;
+}
+
+.right .recent-updates .updates{ 
+    box-shadow: none;
+}
+.right .recent-updates .updates .update{
+    display: grid; 
+    grid-template-columns: 2.6rem auto;
+    gap:1rem;
+    margin-bottom: 1rem;
+} 
+.right .sales-analytics h2{ 
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem; 
+}
+.right .sales-analytics .item{
+    background-color: var(--color-white);
+    display:flex;
+    align-items: center ;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    -webkit-border-radius: var(--border-radius-2);
+    -moz-border-radius: var(--border-radius-2);
+    -ms-border-radius: var(--border-radius-2);
+    -o-border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease ;
+    -webkit-transition: all 300ms ease ;
+    -moz-transition: all 300ms ease ;
+    -ms-transition: all 300ms ease ;
+    -o-transition: all 300ms ease ;
+} 
+.right .sales-analytics .item:hover{
+    box-shadow:none;
+} 
+
+.right .sales-analytics .item .right{
+margin: 0; 
+display: flex; 
+justify-content: space-between; 
+width: 100%;
+} 
+.right .sales-analytics .item .icon{
+    padding: 0.6rem;
+     border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.right .sales-analytics .item.offline .icon{
+    background-color: var(--color-primary);
+} 
+.right .sales-analytics .item.custemers .icon{
+background-color: var(--color-success);
+}
+.right .sales-analytics .add-product{ 
+    background-color: transparent;
+    border: 2px dashed var(--color-primary); 
+    color : var(--color-primary);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.right .sales-analytics .add-product div{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap:0.5rem
+}
+.right .sales-analytics .add-product div h3{
+    font-weight: 600;
+} 
+@media screen and (max-width: 1200px){
+   .container{
+       width: 94%;  
+       grid-template-columns: 8rem auto 23rem ;
+   }
+
+aside .top .titleApp{ 
+    display:none;
+} 
+aside .sidebar h3{
+    display: none;
+}
+aside .sidebar a{
+    width: 5.6rem;
+}
+aside .sidebar a:last-child{
+  position:relative; 
+  margin-top:1.8rem
+} 
+
+main .insights {
+    display: grid; 
+    grid-template-columns: 1fr;
+    gap: 2;
+    margin-top: 2rem;
+} 
+main .insights > div{ 
+ background-color: var(--color-white); 
+ width: 32rem; 
+ padding: var(--card-padding);
+ border-radius: var(--card-border-radius) ;
+ -webkit-border-radius: var(--card-border-radius) ;
+ -moz-border-radius: var(--card-border-radius) ;
+ -ms-border-radius: var(--card-border-radius) ;
+ -o-border-radius: var(--card-border-radius) ;
+ margin-top:1rem; 
+ box-shadow: var(--box-shadow);
+ transition: all 300ms ease ;
+ -webkit-transition: all 300ms ease ;
+ -moz-transition: all 300ms ease ;
+ -ms-transition: all 300ms ease ;
+ -o-transition: all 300ms ease ;
+} 
+
+main .recent-order{
+    width: 94%;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+}
+main .recent-order table{
+    width: 80vw;
+}
+main table thead tr th:first-child,
+main table thead tr th:last-child{
+    display: none; 
+    /* we remove colon all like in excel, we begin by the first child of th */
+   
+} 
+
+main table tbody tr td:first-child,
+main table tbody tr td:last-child{
+    display: none; 
+    /* we remove colon all like in excel, we begin by the first child of th */
+   
+} 
+
+
+
+}
+
+@media screen and (max-width: 768px){
+
+    body{
+        background-color: red;
+    }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
